@@ -1,0 +1,10 @@
+#!/bin/sh
+#jobid="testjobid"
+
+resopt="res23" #not actually used for GMI
+sens="GMI"
+dat="150601"
+infile="../input/1C-R.GPM.GMI.XCAL2016-C.20150601-S130925-E144157.007140.V05A.HDF5" # mid atlantic
+outfile="../output/geos5.GMIg.$dat.pp"
+geos5_pp $sens $infile $outfile $resopt
+#geos5_v1.g/geos5_pp $sens $infile $outfile $resopt

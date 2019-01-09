@@ -1,0 +1,24 @@
+D Duncan, CSU, Dec 2016
+
+A preprocessor for AMSR2 team, merged with the GPM preprocessor
+
+updated Jan 2016 to work with GMI too
+
+many updates Nov/Dec 2016
+- new subroutine to read in NASA's GEOS5 FP-IT analysis data. it reads in
+nc4 files, calculates necessary variables, and interpolates to satellite
+pixel location.
+- GPM surface classifications are changed
+
+update 3/8/16
+now treating scantime correctly, modifications made to read_l1r module and time
+ array added to definition file
+
+update 6/15/16 
+now including TAI93 time to pp output file
+
+update 9/28/16
+now passing through all L1R land_ocean sizes
+
+kind of update 2/20/17
+passing through height values (m) for goe2 experimental algorithm 
