@@ -1,0 +1,29 @@
+
+README document for public version of warm rain CSU 1DVAR
+
+D Duncan, Chalmers University of Technology, Gothenburg, Sweden
+ December 8, 2017 (contact: david.duncan@chalmers.se)
+
+This directory should contain everything needed to run the CSU 1DVAR retrieval,
+ except for the CRTM source code which is publicly available: 
+ ftp.emc.ncep.noaa.gov/jcsda/CRTM
+
+This code is effectively versions of GPROF2017 and CSU 1DVAR packaged together along with
+ the NASA Team 2 (NT2) sea ice algorithm. The GPROF and NT2 calls are commented out
+ but can be run and an 'integrated' .nc output file created at the code's conclusion. Note
+ that the ancillary data needed to run GPROF is not included but is available elsewhere.
+ Absolutely no guarantees are given regarding how up to date or accurate the versions of 
+ GPROF or NT2 are here. 
+
+The retrieval code is run in two steps. First, the preprocessor reads the L1 Tb data from
+ GMI L1CR and attaches ancillary data to each pixel from the global analysis data of 
+ choice, in this case GEOS5 FP-IT (gmao.gsfc.nasa.gov/products). The preprocessor dumps
+ out a .pp binary file which is then the input to the retrieval. The retrieval code
+ (executable 'goe') is then run and outputs files in .nc format. To change which pixels or
+ regions are run by the retrieval, modify define_intam2.f.
+
+Provided as well are the L2 file corresponding to Fig. 7 in the below paper and a year of
+ gridded retrievals used to create Fig. 12 in the paper, both in .nc format. 
+
+See Duncan et al. (in review) JGRA, for algorithm description and analysis, or email
+ david.duncan@chalmers.se with any questions.
